@@ -63,13 +63,6 @@ base {
 neoForge {
     version = neoForgeVersion
 
-    validateAccessTransformers = true
-
-    file("src/main/resources/META-INF/accesstransformer.cfg").takeIf(File::exists)?.let {
-        println("Adding access transformer: $it")
-        setAccessTransformers(it)
-    }
-
     parchment {
         mappingsVersion = libs.versions.parchmentmc.get()
         minecraftVersion = "1.21"
