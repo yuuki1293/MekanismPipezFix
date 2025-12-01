@@ -1,4 +1,4 @@
-# 1.20.1 Changelog
+# 1.21.1 Changelog
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
@@ -6,4 +6,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ### Added
 
-- First release!
+- First 1.21.1 release! (port by @Shad0wlife)
