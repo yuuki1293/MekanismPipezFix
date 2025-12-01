@@ -122,7 +122,6 @@ repositories {
         url = uri("https://modmaven.dev/")
         content {
             includeGroup("mezz.jei")
-            includeGroup("de.mari_023")
             includeGroup("mekanism")
         }
     }
@@ -177,11 +176,6 @@ val generateModMetadata by tasks.registering(ProcessResources::class) {
         rename("template(\\..+)?.mixins.json", "${modId}$1.mixins.json")
     }
     into("build/generated/sources/modMetadata")
-
-    // GuideME guide
-    from("guidebook") {
-        into("assets/ae2peat/guides/ae2peat/guide")
-    }
 }
 
 tasks {
