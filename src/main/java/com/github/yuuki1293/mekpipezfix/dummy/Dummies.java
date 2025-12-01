@@ -2,11 +2,10 @@ package com.github.yuuki1293.mekpipezfix.dummy;
 
 import de.maxhenkel.pipez.utils.DummyFluidHandler;
 import de.maxhenkel.pipez.utils.DummyItemHandler;
-import net.neoforged.neoforge.capabilities.BlockCapability;
-import mekanism.common.capabilities.Capabilities;
-
 import java.util.HashMap;
 import java.util.Map;
+import mekanism.common.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.BlockCapability;
 
 public class Dummies {
     public static Map<BlockCapability<?, ?>, Object> MAP = new HashMap<>();

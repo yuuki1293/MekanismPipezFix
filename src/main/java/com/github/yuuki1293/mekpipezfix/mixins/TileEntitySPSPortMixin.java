@@ -1,12 +1,10 @@
 package com.github.yuuki1293.mekpipezfix.mixins;
 
 import com.github.yuuki1293.mekpipezfix.IValve;
-import com.github.yuuki1293.mekpipezfix.dummy.Dummies;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.multiblock.TileEntitySPSPort;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
 

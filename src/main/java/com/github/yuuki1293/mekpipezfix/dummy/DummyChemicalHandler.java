@@ -19,9 +19,7 @@ public class DummyChemicalHandler implements IChemicalHandler {
     }
 
     @Override
-    public void setChemicalInTank(int tank, @NotNull ChemicalStack stack) {
-
-    }
+    public void setChemicalInTank(int tank, @NotNull ChemicalStack stack) {}
 
     @Override
     public long getChemicalTankCapacity(int tank) {

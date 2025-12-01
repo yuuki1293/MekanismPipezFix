@@ -22,16 +22,18 @@ public abstract class FormationProtocolMixin<T extends MultiblockData> {
      * Update pipez when a multi-block is assembled.
      */
     @Inject(method = "doUpdate", at = @At("RETURN"))
-    public void doUpdate(CallbackInfoReturnable<FormationProtocol.FormationResult> cir, @Local(name = "structureFound") T structureFound) {
+    public void doUpdate(
+            CallbackInfoReturnable<FormationProtocol.FormationResult> cir,
+            @Local(name = "structureFound") T structureFound) {
         var ret = cir.getReturnValue();
         if (ret == FormationProtocol.FormationResult.SUCCESS) {
             var level = pointer.getLevel();
             structureFound.valves.stream()
-                .map(p -> p.location)
-                .map(level::getBlockEntity)
-                .filter(IValve.class::isInstance)
-                .map(IValve.class::cast)
-                .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
+                    .map(p -> p.location)
+                    .map(level::getBlockEntity)
+                    .filter(IValve.class::isInstance)
+                    .map(IValve.class::cast)
+                    .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
         }
     }
 }
