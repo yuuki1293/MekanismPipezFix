@@ -25,7 +25,7 @@ public abstract class FormationProtocolMixin<T extends MultiblockData> {
     public void doUpdate(CallbackInfoReturnable<FormationProtocol.FormationResult> cir, @Local(name = "structureFound") T structureFound) {
         var ret = cir.getReturnValue();
         if (ret == FormationProtocol.FormationResult.SUCCESS) {
-            var level = pointer.getTileWorld();
+            var level = pointer.getLevel();
             structureFound.valves.stream()
                 .map(p -> p.location)
                 .map(level::getBlockEntity)

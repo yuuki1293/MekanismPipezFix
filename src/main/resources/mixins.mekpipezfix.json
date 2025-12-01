@@ -3,7 +3,7 @@
     "minVersion": "0.8",
     "package": "com.github.yuuki1293.mekpipezfix.mixins",
     "refmap": "mixins.mekpipezfix.refmap.json",
-    "compatibilityLevel": "JAVA_17",
+    "compatibilityLevel": "JAVA_21",
     "mixins": [
         "FormationProtocolMixin",
         "TileEntityBoilerValveMixin",

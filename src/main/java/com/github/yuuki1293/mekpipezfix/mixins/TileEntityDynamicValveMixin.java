@@ -2,46 +2,18 @@ package com.github.yuuki1293.mekpipezfix.mixins;
 
 import com.github.yuuki1293.mekpipezfix.IValve;
 import com.github.yuuki1293.mekpipezfix.dummy.Dummies;
-import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import mekanism.common.tile.multiblock.TileEntityDynamicValve;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.common.util.LazyOptional;
-import org.apache.commons.lang3.ArrayUtils;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(value = TileEntityDynamicValve.class)
 public abstract class TileEntityDynamicValveMixin extends CapabilityTileEntity implements IValve {
-    @Unique
-    static private final Capability<?>[] mekanismPipezFix$caps = {
-        ForgeCapabilities.ITEM_HANDLER,
-        ForgeCapabilities.FLUID_HANDLER,
-        Capabilities.GAS_HANDLER,
-        Capabilities.INFUSION_HANDLER,
-        Capabilities.PIGMENT_HANDLER,
-        Capabilities.SLURRY_HANDLER
-    };
 
     public TileEntityDynamicValveMixin(TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-    }
-
-    @NotNull
-    @Override
-    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> capability, @Nullable Direction side) {
-        var cap = super.getCapability(capability, side);
-        if (!cap.isPresent() && ArrayUtils.contains(mekanismPipezFix$caps, capability)) {
-            //noinspection unchecked
-            return LazyOptional.of(() -> (T) Dummies.MAP.get(capability));
-        }
-        return cap;
     }
 }

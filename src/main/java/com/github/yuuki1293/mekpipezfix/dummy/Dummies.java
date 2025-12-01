@@ -2,23 +2,19 @@ package com.github.yuuki1293.mekpipezfix.dummy;
 
 import de.maxhenkel.pipez.utils.DummyFluidHandler;
 import de.maxhenkel.pipez.utils.DummyItemHandler;
+import net.neoforged.neoforge.capabilities.BlockCapability;
 import mekanism.common.capabilities.Capabilities;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Dummies {
-    public static Map<Capability<?>, Object> MAP = new HashMap<>();
+    public static Map<BlockCapability<?, ?>, Object> MAP = new HashMap<>();
 
     static {
-        MAP.put(ForgeCapabilities.ITEM_HANDLER, DummyItemHandler.INSTANCE);
-        MAP.put(ForgeCapabilities.FLUID_HANDLER, DummyFluidHandler.INSTANCE);
-        MAP.put(ForgeCapabilities.ENERGY, DummyEnergyStorage.INSTANCE);
-        MAP.put(Capabilities.GAS_HANDLER, DummyGasHandler.INSTANCE);
-        MAP.put(Capabilities.INFUSION_HANDLER, DummyInfusionHandler.INSTANCE);
-        MAP.put(Capabilities.PIGMENT_HANDLER, DummyPigmentHandler.INSTANCE);
-        MAP.put(Capabilities.SLURRY_HANDLER, DummySlurryHandler.INSTANCE);
+        MAP.put(Capabilities.ITEM.block(), DummyItemHandler.INSTANCE);
+        MAP.put(Capabilities.FLUID.block(), DummyFluidHandler.INSTANCE);
+        MAP.put(Capabilities.ENERGY.block(), DummyEnergyStorage.INSTANCE);
+        MAP.put(Capabilities.CHEMICAL.block(), DummyChemicalHandler.INSTANCE);
     }
 }

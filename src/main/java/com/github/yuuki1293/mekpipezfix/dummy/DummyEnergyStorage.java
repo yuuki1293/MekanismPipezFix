@@ -1,6 +1,6 @@
 package com.github.yuuki1293.mekpipezfix.dummy;
 
-import net.minecraftforge.energy.IEnergyStorage;
+import net.neoforged.neoforge.energy.IEnergyStorage;
 
 public class DummyEnergyStorage implements IEnergyStorage {
     public static final DummyEnergyStorage INSTANCE = new DummyEnergyStorage();
