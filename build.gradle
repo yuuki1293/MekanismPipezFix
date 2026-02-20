@@ -162,6 +162,7 @@ dependencies {
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}")// Mekanism
     implementation fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
     implementation fg.deobf("curse.maven:pipez-443900:${pipez_version}") // Pipez
+    implementation fg.deobf("curse.maven:jade-324717:6855440")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
