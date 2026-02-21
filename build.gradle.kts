@@ -150,6 +150,20 @@ dependencies {
     modRuntimeOnly (libs.pipez)
 
     annotationProcessor(variantOf(libs.mixin, "processor"))
+    libs.mixinExtrasCommon.let {
+        annotationProcessor(it)
+        modCompileOnly(it)
+    }
+    libs.mixinExtrasForge.let {
+        jarJar(it) {
+            version {
+                val version = it.get().version.toString()
+                strictly("[$version,)")
+                prefer(version)
+            }
+        }
+        modImplementation(it)
+    }
 }
 
 val modDependencies = listOf(
