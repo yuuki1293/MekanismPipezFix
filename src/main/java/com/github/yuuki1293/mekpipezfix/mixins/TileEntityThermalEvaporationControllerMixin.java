@@ -20,11 +20,10 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(value = TileEntityThermalEvaporationController.class)
 public abstract class TileEntityThermalEvaporationControllerMixin extends CapabilityTileEntity implements IValve {
     @Unique
-    static private final Capability<?>[] mekanismPipezFix$caps = {
-        ForgeCapabilities.ITEM_HANDLER
-    };
+    private static final Capability<?>[] mekanismPipezFix$caps = {ForgeCapabilities.ITEM_HANDLER};
 
-    public TileEntityThermalEvaporationControllerMixin(TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
+    public TileEntityThermalEvaporationControllerMixin(
+            TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
 

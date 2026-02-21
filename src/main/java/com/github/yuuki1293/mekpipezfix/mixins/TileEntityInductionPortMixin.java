@@ -20,9 +20,8 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(value = TileEntityInductionPort.class)
 public abstract class TileEntityInductionPortMixin extends CapabilityTileEntity implements IValve {
     @Unique
-    static private final Capability<?>[] mekanismPipezFix$caps = {
-        ForgeCapabilities.ITEM_HANDLER,
-        ForgeCapabilities.ENERGY
+    private static final Capability<?>[] mekanismPipezFix$caps = {
+        ForgeCapabilities.ITEM_HANDLER, ForgeCapabilities.ENERGY
     };
 
     public TileEntityInductionPortMixin(TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {

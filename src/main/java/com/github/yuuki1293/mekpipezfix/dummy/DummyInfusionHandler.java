@@ -19,9 +19,7 @@ public class DummyInfusionHandler implements IInfusionHandler {
     }
 
     @Override
-    public void setChemicalInTank(int tank, @NotNull InfusionStack stack) {
-
-    }
+    public void setChemicalInTank(int tank, @NotNull InfusionStack stack) {}
 
     @Override
     public long getTankCapacity(int tank) {

@@ -19,9 +19,7 @@ public class DummySlurryHandler implements ISlurryHandler {
     }
 
     @Override
-    public void setChemicalInTank(int tank, @NotNull SlurryStack stack) {
-
-    }
+    public void setChemicalInTank(int tank, @NotNull SlurryStack stack) {}
 
     @Override
     public long getTankCapacity(int tank) {

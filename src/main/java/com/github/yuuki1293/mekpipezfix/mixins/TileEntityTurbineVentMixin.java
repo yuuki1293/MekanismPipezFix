@@ -20,9 +20,7 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(value = TileEntityTurbineVent.class)
 public abstract class TileEntityTurbineVentMixin extends CapabilityTileEntity implements IValve {
     @Unique
-    static private final Capability<?>[] mekanismPipezFix$caps = {
-        ForgeCapabilities.FLUID_HANDLER
-    };
+    private static final Capability<?>[] mekanismPipezFix$caps = {ForgeCapabilities.FLUID_HANDLER};
 
     public TileEntityTurbineVentMixin(TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);

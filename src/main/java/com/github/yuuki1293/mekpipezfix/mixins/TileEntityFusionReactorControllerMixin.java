@@ -2,10 +2,8 @@ package com.github.yuuki1293.mekpipezfix.mixins;
 
 import com.github.yuuki1293.mekpipezfix.IValve;
 import com.github.yuuki1293.mekpipezfix.dummy.Dummies;
-import mekanism.common.capabilities.Capabilities;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject;
 import mekanism.common.tile.base.CapabilityTileEntity;
-import mekanism.common.tile.multiblock.TileEntityDynamicValve;
 import mekanism.generators.common.tile.fusion.TileEntityFusionReactorController;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -22,11 +20,10 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(value = TileEntityFusionReactorController.class)
 public abstract class TileEntityFusionReactorControllerMixin extends CapabilityTileEntity implements IValve {
     @Unique
-    static private final Capability<?>[] mekanismPipezFix$caps = {
-        ForgeCapabilities.ITEM_HANDLER
-    };
+    private static final Capability<?>[] mekanismPipezFix$caps = {ForgeCapabilities.ITEM_HANDLER};
 
-    public TileEntityFusionReactorControllerMixin(TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
+    public TileEntityFusionReactorControllerMixin(
+            TileEntityTypeRegistryObject<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
     }
 

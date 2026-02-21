@@ -298,24 +298,25 @@ publisher {
     addAdditionalFile(tasks.named("sourcesJar"))
 
     curseDepends {
-        required("applied-energistics-2")
-        optional("applied-energistics-2-wireless-terminals")
-        embedded("ae2addonlib")
+        required("pipez")
+        required("mekanism")
+        optional("mekanism-generators")
     }
 
     modrinthDepends {
-        required("ae2")
-        optional("applied-energistics-2-wireless-terminals")
+        required("pipez")
+        required("mekanism")
+        optional("mekanism-generators")
     }
 
     github {
-        repo("yuuki1293/AE2PatternEncodingAccessTerminal")
-        tag("forge/v${mcVersion}-${project.version}")
+        repo("yuuki1293/MekanismPipezFix")
+        tag("v${mcVersion}-${project.version}")
         displayName("[$mcVersion] v${project.version}")
         createTag(true)
         createRelease(true)
         updateRelease(true)
-        target("forge/${mcVersion}")
+        target(mcVersion)
     }
 }
 

@@ -2,12 +2,11 @@ package com.github.yuuki1293.mekpipezfix.dummy;
 
 import de.maxhenkel.pipez.utils.DummyFluidHandler;
 import de.maxhenkel.pipez.utils.DummyItemHandler;
+import java.util.HashMap;
+import java.util.Map;
 import mekanism.common.capabilities.Capabilities;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class Dummies {
     public static Map<Capability<?>, Object> MAP = new HashMap<>();

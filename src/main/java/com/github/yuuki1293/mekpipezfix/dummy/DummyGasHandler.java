@@ -19,9 +19,7 @@ public class DummyGasHandler implements IGasHandler {
     }
 
     @Override
-    public void setChemicalInTank(int tank, @NotNull GasStack stack) {
-
-    }
+    public void setChemicalInTank(int tank, @NotNull GasStack stack) {}
 
     @Override
     public long getTankCapacity(int tank) {

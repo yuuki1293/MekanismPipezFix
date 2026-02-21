@@ -19,9 +19,7 @@ public class DummyPigmentHandler implements IPigmentHandler {
     }
 
     @Override
-    public void setChemicalInTank(int tank, @NotNull PigmentStack stack) {
-
-    }
+    public void setChemicalInTank(int tank, @NotNull PigmentStack stack) {}
 
     @Override
     public long getTankCapacity(int tank) {
