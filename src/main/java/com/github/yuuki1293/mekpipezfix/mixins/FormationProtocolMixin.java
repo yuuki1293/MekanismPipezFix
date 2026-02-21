@@ -24,14 +24,16 @@ public abstract class FormationProtocolMixin<T extends MultiblockData> {
     @Inject(method = "doUpdate", at = @At("RETURN"))
     public void doUpdate(CallbackInfoReturnable<FormationProtocol.FormationResult> cir, @Local(name = "structureFound") T structureFound) {
         var ret = cir.getReturnValue();
-        if (ret == FormationProtocol.FormationResult.SUCCESS) {
-            var level = pointer.getTileWorld();
-            structureFound.valves.stream()
-                .map(p -> p.location)
-                .map(level::getBlockEntity)
-                .filter(IValve.class::isInstance)
-                .map(IValve.class::cast)
-                .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
-        }
+        if (ret != FormationProtocol.FormationResult.SUCCESS || structureFound == null) return;
+
+        var level = pointer.getTileWorld();
+        if (level == null || level.isClientSide || structureFound.valves.isEmpty()) return;
+
+        structureFound.valves.stream()
+            .map(p -> p.location)
+            .map(level::getBlockEntity)
+            .filter(IValve.class::isInstance)
+            .map(IValve.class::cast)
+            .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
     }
 }

@@ -12,15 +12,15 @@ public interface IValve {
      * @param sides valid sides
      */
     default void mekpipezfix$updatePipezCache(BlockEntity self, Direction[] sides) {
+        var level = self.getLevel();
+        if (level == null || level.isClientSide) return;
         for (Direction side : sides) {
-            var level = self.getLevel();
-            if (level == null) return;
             var pipezSide = side.getOpposite();
             var pipePos = self.getBlockPos().relative(side);
             var be = level.getBlockEntity(pipePos);
 
-            PipeTileEntity.markPipesDirty(level, pipePos);
             if (be instanceof PipeLogicTileEntity pipez && pipez.isExtracting(pipezSide)) {
+                PipeTileEntity.markPipesDirty(level, pipePos);
                 pipez.setExtracting(pipezSide, true);
             }
         }
