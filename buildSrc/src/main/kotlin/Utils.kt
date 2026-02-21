@@ -23,7 +23,7 @@ fun buildDeps(
             [[dependencies.${Constants.Mod.id}]]
             modId = "$id"
             versionRange = "$version"
-            mandatory = "$mandatory"
+            mandatory = $mandatory
             ordering = "$ordering"
             side = "$side"
         """.trimIndent()
