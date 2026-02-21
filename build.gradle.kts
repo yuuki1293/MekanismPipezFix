@@ -167,8 +167,8 @@ dependencies {
 }
 
 val modDependencies = listOf(
-    ModDep("forge", extractVersionSegments(forgeVersion)),
-    ModDep("minecraft", mcVersion)
+    ModDep("forge", "[${extractVersionSegments(forgeVersion)},)"),
+    ModDep("minecraft", "[$mcVersion,)")
 )
 
 val generateModMetadata by tasks.registering(ProcessResources::class) {
