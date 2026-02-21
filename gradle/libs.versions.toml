@@ -6,7 +6,7 @@ plugin_changelog = "2.2.1"
 plugin_spotless = "6.25.0"
 
 minecraft = "1.20.1"
-forge = "47.1.47"
+forge = "47.4.0"
 parchmentmc = "2023.09.03"
 mixin = "0.8.5"
 mixinExtras = "0.4.1"
