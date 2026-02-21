@@ -1,0 +1,31 @@
+[versions]
+plugin_kotlin = "2.0.0"
+plugin_moddev = "2.0.+"
+plugin_modPublisher = "2.1.+"
+plugin_changelog = "2.2.1"
+plugin_spotless = "6.25.0"
+
+minecraft = "1.20.1"
+forge = "47.1.47"
+parchmentmc = "2023.09.03"
+mixin = "0.8.5"
+mixinExtras = "0.4.1"
+
+mekanism = "1.20.1-10.4.9.61"
+pipez = "4916633"
+
+[libraries]
+mixin = { module = "org.spongepowered:mixin", version.ref = "mixin" }
+mixinExtrasCommon = { module = "io.github.llamalad7:mixinextras-common", version.ref = "mixinExtras" }
+mixinExtrasForge = { module = "io.github.llamalad7:mixinextras-forge", version.ref = "mixinExtras" }
+
+mekanism = { module = "mekanism:Mekanism", version.ref = "mekanism" }
+pipez = { module = "curse.maven:pipez-443900", version.ref = "pipez" }
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "plugin_kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "plugin_kotlin" }
+moddev = { id = "net.neoforged.moddev.legacyforge", version.ref = "plugin_moddev" }
+modPublisher = { id = "com.hypherionmc.modutils.modpublisher", version.ref = "plugin_modPublisher" }
+changelog = { id = "org.jetbrains.changelog", version.ref = "plugin_changelog"}
+spotless = { id = "com.diffplug.spotless", version.ref = "plugin_spotless" }
