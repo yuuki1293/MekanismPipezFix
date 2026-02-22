@@ -10,6 +10,5 @@ public class MekPipezFix {
     public static final String MODID = "mekpipezfix";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public MekPipezFix(FMLJavaModLoadingContext context) {
-    }
+    public MekPipezFix(FMLJavaModLoadingContext context) {}
 }

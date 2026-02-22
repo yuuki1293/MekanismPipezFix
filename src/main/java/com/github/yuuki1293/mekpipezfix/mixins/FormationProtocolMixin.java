@@ -29,7 +29,10 @@ public abstract class FormationProtocolMixin<T extends MultiblockData> {
         if (ret != FormationProtocol.FormationResult.SUCCESS || structureFound == null) return;
 
         var level = pointer.getTileWorld();
-        if (level == null || level.isClientSide || structureFound.locations == null || structureFound.locations.isEmpty()) return;
+        if (level == null
+                || level.isClientSide
+                || structureFound.locations == null
+                || structureFound.locations.isEmpty()) return;
 
         structureFound.locations.stream()
                 .map(level::getBlockEntity)
