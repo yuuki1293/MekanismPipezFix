@@ -30,14 +30,14 @@ public abstract class FormationProtocolMixin<T extends MultiblockData> {
 
         var level = pointer.getLevel();
         if (level == null
-            || level.isClientSide
-            || structureFound.locations == null
-            || structureFound.locations.isEmpty()) return;
+                || level.isClientSide
+                || structureFound.locations == null
+                || structureFound.locations.isEmpty()) return;
 
         structureFound.locations.stream()
-            .map(level::getBlockEntity)
-            .filter(IValve.class::isInstance)
-            .map(IValve.class::cast)
-            .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
+                .map(level::getBlockEntity)
+                .filter(IValve.class::isInstance)
+                .map(IValve.class::cast)
+                .forEach(v -> v.mekpipezfix$updatePipezCache((BlockEntity) v, Direction.values()));
     }
 }
