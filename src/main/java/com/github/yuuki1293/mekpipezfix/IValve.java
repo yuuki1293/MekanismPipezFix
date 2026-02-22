@@ -1,5 +1,6 @@
 package com.github.yuuki1293.mekpipezfix;
 
+import de.maxhenkel.pipez.blocks.PipeBlock;
 import de.maxhenkel.pipez.blocks.tileentity.PipeLogicTileEntity;
 import de.maxhenkel.pipez.blocks.tileentity.PipeTileEntity;
 import net.minecraft.core.Direction;
@@ -17,10 +18,13 @@ public interface IValve {
         for (Direction side : sides) {
             var pipezSide = side.getOpposite();
             var pipePos = self.getBlockPos().relative(side);
+            if (level.getBlockState(pipePos).getBlock() instanceof PipeBlock) {
+                PipeTileEntity.markPipesDirty(level, pipePos);
+            }
+
             var be = level.getBlockEntity(pipePos);
 
             if (be instanceof PipeLogicTileEntity pipez && pipez.isExtracting(pipezSide)) {
-                PipeTileEntity.markPipesDirty(level, pipePos);
                 pipez.setExtracting(pipezSide, true);
             }
         }
